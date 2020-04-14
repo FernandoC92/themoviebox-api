@@ -1,0 +1,34 @@
+[
+    {
+        "popularity": 565.041,
+        "vote_count": 2896,
+        "video": false,
+        "poster_path": "\/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg",
+        "id": 419704,
+        "adult": false,
+        "backdrop_path": "\/5BwqwxMEjeFtdknRV792Svo0K1v.jpg",
+        "original_language": "en",
+        "original_title": "Ad Astra",
+        "genre_ids": 20,
+        "title": "Ad Astra",
+        "vote_average": 5.9,
+        "overview": "The near future, a time when both hope and hardships drive humanity to look to the stars and beyond. While a mysterious phenomenon menaces to destroy life on planet Earth, astronaut Roy McBride undertakes a mission across the immensity of space and its many perils to uncover the truth about a lost expedition that decades before boldly faced emptiness and silence in search of the unknown.",
+        "release_date": "2019-09-17"
+      },
+      {
+        "popularity": 362.953,
+        "vote_count": 2711,
+        "video": false,
+        "poster_path": "\/y95lQLnuNKdPAzw9F9Ab8kJ80c3.jpg",
+        "id": 38700,
+        "adult": false,
+        "backdrop_path": "\/upUy2QhMZEmtypPW3PdieKLAHxh.jpg",
+        "original_language": "en",
+        "original_title": "Bad Boys for Life",
+        "genre_ids": 28,
+        "title": "Bad Boys for Life",
+        "vote_average": 7.1,
+        "overview": "Marcus and Mike are forced to confront new threats, career changes, and midlife crises as they join the newly created elite team AMMO of the Miami police department to take down the ruthless Armando Armas, the vicious leader of a Miami drug cartel.",
+        "release_date": "2020-01-15"
+      }
+]

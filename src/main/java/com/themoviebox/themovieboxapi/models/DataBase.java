@@ -51,7 +51,15 @@ public class DataBase {
         System.out.println(posterPath);
 
         // Double or Long
-        long voteAverage = (long) movie.get("vote_average");
+        double voteAverage;
+        if (movie.get("vote_average") instanceof Long) {
+            Long test = (Long) movie.get("vote_average");
+            voteAverage = test.doubleValue();
+        } else {
+            voteAverage = (double) movie.get("vote_average");
+        }
+        // Long l = new Long(15552451L);
+        // double d = l.doubleValue();
         System.out.println(voteAverage);
 
         String overview = (String) movie.get("overview");

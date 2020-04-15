@@ -1,7 +1,5 @@
 package com.themoviebox.themovieboxapi.models;
 
-import java.util.List;
-
 import org.json.simple.JSONArray;
 
 public class Movie {
@@ -9,13 +7,13 @@ public class Movie {
     private long id;
     private String title;
     private String posterPath;
-    private long voteAverage;
+	private double voteAverage;
     private String overview;
     private JSONArray genreIds;
     private String releaseDate;
     private double popularity;
 
-    public Movie(long id, String title, String posterPath, long voteAverage, String overview, JSONArray genreIds,
+	public Movie(long id, String title, String posterPath, double voteAverage, String overview, JSONArray genreIds,
 			String releaseDate, double popularity) {
 		this.id = id;
 		this.title = title;
@@ -51,11 +49,12 @@ public class Movie {
 		this.posterPath = posterPath;
 	}
 
-	public long getVoteAverage() {
+	public double getVoteAverage() {
 		return voteAverage;
 	}
 
-	public void setVoteAverage(long voteAverage) {
+	public void setVoteAverage(double voteAverage) {
+
 		this.voteAverage = voteAverage;
 	}
 

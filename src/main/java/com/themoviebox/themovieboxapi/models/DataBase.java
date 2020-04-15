@@ -50,13 +50,14 @@ public class DataBase {
         String posterPath = (String) movie.get("poster_path");
         System.out.println(posterPath);
 
-        double voteAverage = (double) movie.get("vote_average");
+        // Double or Long
+        long voteAverage = (long) movie.get("vote_average");
         System.out.println(voteAverage);
 
         String overview = (String) movie.get("overview");
         System.out.println(overview);
 
-        long genreIds = (long) movie.get("genre_ids");
+        JSONArray genreIds = (JSONArray) movie.get("genre_ids");
         System.out.println(genreIds);
 
         String releaseDate = (String) movie.get("release_date");

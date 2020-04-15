@@ -9,6 +9,7 @@ import com.themoviebox.themovieboxapi.models.Movie;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 // import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,21 +19,22 @@ public class DiscoverController {
     // /discover/movie?sort_by=popularity.desc
 
     @GetMapping
-    public List<Movie> getMostPopular() {
+    public List<Movie> getSortBy(@RequestParam(name="sort_by") String sortBy) {
 
         List<Movie> response = new ArrayList<Movie>();
-        // List<Movie> result = new ArrayList<Movie>();
+      
         DataBase dataBase = new DataBase();
         response = dataBase.generateListMovies();
 
-        // System.out.println("sort_by: " + sort_by);
-        
-        Collections.sort(response, new SortByPopularity());
+        System.out.println("sort_by: " + sortBy);
 
-        response.forEach(obj ->{
-            System.out.println(obj);
-        });
-
+        if (sortBy.equals("popularity.desc")) {
+            System.out.println("popularity.desc");
+            Collections.sort(response, new SortByPopularity());
+        } else {
+            System.out.println("vote_average");
+            Collections.sort(response, new SortByVoteAverage());
+        } 
 
         return response;
 
@@ -44,6 +46,14 @@ class SortByPopularity implements Comparator<Movie> {
     
     public int compare(Movie a, Movie b) {
         return Double.compare(b.getPopularity(), a.getPopularity());
+    }
+
+}
+
+class SortByVoteAverage implements Comparator<Movie> {
+
+    public int compare(Movie a, Movie b) {
+        return Double.compare(b.getVoteAverage(), a.getVoteAverage());
     }
 
 }

@@ -8,15 +8,15 @@ import java.util.stream.Collectors;
 import com.themoviebox.themovieboxapi.models.DataBase;
 import com.themoviebox.themovieboxapi.models.Movie;
 
-import org.json.simple.JSONArray;
-import static java.util.Objects.nonNull;
 import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 // import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/discover")
 public class DiscoverController {
@@ -31,14 +31,10 @@ public class DiscoverController {
         DataBase dataBase = new DataBase();
         response = dataBase.generateListMovies();
 
-        System.out.println("sort_by: " + sortBy);
-
         if (nonNull(sortBy)) {
             if (sortBy.equals("popularity.desc")) {
-                System.out.println("popularity.desc");
                 Collections.sort(response, new SortByPopularity());
-            } else if (sortBy.equals("vote_average")) {
-                System.out.println("vote_average");
+            } else if (sortBy.equals("vote_average.desc")) {
                 Collections.sort(response, new SortByVoteAverage());
             }
         } else if (withGenre != null) {
@@ -50,8 +46,15 @@ public class DiscoverController {
     }
 
     private boolean nonNull(String sortBy) {
-        return false;
+        boolean isNull;
+        if (sortBy != null) {
+            isNull = true;
+        } else {
+            isNull = false;
+        }
+        return isNull;
     }
+    
 
 }
 

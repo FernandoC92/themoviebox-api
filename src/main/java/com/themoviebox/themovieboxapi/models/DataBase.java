@@ -12,7 +12,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class DataBase {
-    
+
     @SuppressWarnings("unchecked")
     public List<Movie> generateListMovies() {
 
@@ -23,7 +23,6 @@ public class DataBase {
 
             Object obj = jsonParser.parse(reader);
             JSONArray movieList = (JSONArray) obj;
-            System.out.println(movieList);
 
             movieList.forEach(movie -> movies.add(parseMovieObject((JSONObject) movie)));
 
@@ -42,13 +41,10 @@ public class DataBase {
     private Movie parseMovieObject(JSONObject movie) {
 
         long id = (long) movie.get("id");
-        System.out.println(id);
 
         String title = (String) movie.get("title");
-        System.out.println(title);
 
         String posterPath = (String) movie.get("poster_path");
-        System.out.println(posterPath);
 
         // Double or Long
         double voteAverage;
@@ -58,21 +54,14 @@ public class DataBase {
         } else {
             voteAverage = (double) movie.get("vote_average");
         }
-        // Long l = new Long(15552451L);
-        // double d = l.doubleValue();
-        System.out.println(voteAverage);
 
         String overview = (String) movie.get("overview");
-        System.out.println(overview);
 
         JSONArray genreIds = (JSONArray) movie.get("genre_ids");
-        System.out.println(genreIds);
 
         String releaseDate = (String) movie.get("release_date");
-        System.out.println(releaseDate);
 
         double popularity = (double) movie.get("popularity");
-        System.out.println(popularity);
 
         return new Movie(id, title, posterPath, voteAverage, overview, genreIds, releaseDate, popularity);
 

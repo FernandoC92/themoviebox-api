@@ -31,8 +31,7 @@
     "genre_ids": [
       28,
       80,
-      53,
-      999
+      53
     ],
     "title": "Bad Boys for Life",
     "vote_average": 7,
@@ -55,8 +54,7 @@
       35,
       14,
       10402,
-      10751,
-      999
+      10751
     ],
     "title": "Trolls World Tour",
     "vote_average": 7.7,
@@ -142,27 +140,6 @@
     "vote_average": 7,
     "overview": "Harley Quinn joins forces with a singer, an assassin and a police detective to help a young girl who had a hit placed on her after she stole a rare diamond from a crime lord.",
     "release_date": "2020-02-05"
-  },
-  {
-    "popularity": 119.685,
-    "vote_count": 1343,
-    "video": false,
-    "poster_path": "\/nYcaCNkB4EgVyvrXxxbklefDrGL.jpg",
-    "id": 412117,
-    "adult": false,
-    "backdrop_path": "\/5mFcjZ58f9Pqg5RNv493XlfgzIX.jpg",
-    "original_language": "en",
-    "original_title": "The Secret Life of Pets 2",
-    "genre_ids": [
-      12,
-      16,
-      35,
-      10751
-    ],
-    "title": "The Secret Life of Pets 2",
-    "vote_average": 6,
-    "overview": "Max the terrier must cope with some major life changes when his owner gets married and has a baby. When the family takes a trip to the countryside, nervous Max has numerous run-ins with canine-intolerant cows, hostile foxes and a scary turkey. Luckily for Max, he soon catches a break when he meets Rooster, a gruff farm dog who tries to cure the lovable pooch of his neuroses.",
-    "release_date": "2019-05-24"
   },
   {
     "popularity": 251.747,

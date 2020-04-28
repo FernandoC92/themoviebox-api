@@ -10,4 +10,6 @@ public class ThemovieboxApiApplication {
 		SpringApplication.run(ThemovieboxApiApplication.class, args);
 	}
 
+
+
 }

@@ -1,10 +1,8 @@
 package com.themoviebox.themovieboxapi.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import com.themoviebox.themovieboxapi.models.DataBase;
+import com.themoviebox.themovieboxapi.models.DataQuery;
 import com.themoviebox.themovieboxapi.models.Movie;
 
 import org.springframework.lang.Nullable;
@@ -22,16 +20,9 @@ public class SearchController {
     @GetMapping
     public List<Movie> queryName(@Nullable @RequestParam(name = "query") String query) {
 
-        List<Movie> queryList = new ArrayList<Movie>();
+        DataQuery dataQuery = new DataQuery();
 
-        DataBase dataBase = new DataBase();
-
-        queryList = dataBase.generateListMovies();
-
-        queryList = queryList.stream().filter(movie -> movie.getTitle().toUpperCase().contains(query.toUpperCase()))
-        .collect(Collectors.toList());
-
-        return queryList;
+        return dataQuery.GetByName(query);
 
     }
 
